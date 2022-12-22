@@ -8,7 +8,10 @@ Minimal GCP python function to receive and print events from Stripe.
 
 ```bash
 # run function locally in debug mode on port 8081
-functions-framework --source=./python-functions/stripe_webhook/main.py --target=stripe_webhook --debug --port=8081
+functions-framework --source=./python-functions/stripe_webhook/main.py \
+  --target=stripe_webhook \
+  --debug \
+  --port=8081
 ```
 
 You should see output like this to show function is running locally on port 8081 (you can use whatever port you want):
