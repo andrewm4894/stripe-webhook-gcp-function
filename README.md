@@ -83,7 +83,6 @@ Finally in the window where you triggered the functions framework to run you sho
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:8081
- * Running on http://192.168.86.31:8081
 Press CTRL+C to quit
  * Restarting with watchdog (windowsapi)
  * Debugger is active!
