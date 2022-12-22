@@ -11,7 +11,7 @@ variable "pyfunc_info_stripe_webhook" {
   default = {
     name = "stripe_webhook"
     # increment the version string each time you want to force a new deployment
-    version = "v12"
+    version = "v16"
   }
 }
 

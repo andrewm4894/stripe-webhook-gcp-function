@@ -12,15 +12,17 @@ endpoint_secret = os.getenv('stripe_endpoint_secret')
 @functions_framework.http
 def stripe_webhook(request):
 
-    print(request)
-    print(dir(request))
-    payload = request.get_data()
-    print(payload)
-    print('xxxxxxxxxxxxxxx')
-
     event = None
-
     sig_header = request.headers['STRIPE_SIGNATURE']
+
+    print(request)
+    print(type(request))
+    print(dir(request))
+    payload = request.data.decode('utf-8')
+    print(payload)
+    print(sig_header)
+    print(endpoint_secret)
+    print('xxxxxxxxxxxxxxx')
 
     try:
         event = stripe.Webhook.construct_event(
@@ -33,6 +35,7 @@ def stripe_webhook(request):
         # Invalid signature
         raise e
 
+    print('SUCCESS!!!!!!')
     print(event)
 
     return jsonify(success=True)
