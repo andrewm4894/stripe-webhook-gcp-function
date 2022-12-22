@@ -1,3 +1,7 @@
+#############################
+# Python
+#############################
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -128,6 +132,10 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+#############################
+# Terraform
+#############################
+
 # Local .terraform directories
 **/.terraform/*
 
@@ -162,6 +170,10 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+#############################
+# Custom stuff to this repo
+#############################
 
 # sensitive tf vars
 conf.tf

@@ -1,28 +1,23 @@
-import functions_framework
 import os
+import json
+
+from flask import jsonify
 from dotenv import load_dotenv
-
+import functions_framework
 import stripe
-from flask import Flask, jsonify, request
 
+# used to read .env file to make local execution easy
 load_dotenv()
 
 endpoint_secret = os.getenv('stripe_endpoint_secret')
+
 
 @functions_framework.http
 def stripe_webhook(request):
 
     event = None
     sig_header = request.headers['STRIPE_SIGNATURE']
-
-    print(request)
-    print(type(request))
-    print(dir(request))
     payload = request.data.decode('utf-8')
-    print(payload)
-    print(sig_header)
-    print(endpoint_secret)
-    print('xxxxxxxxxxxxxxx')
 
     try:
         event = stripe.Webhook.construct_event(
@@ -35,7 +30,7 @@ def stripe_webhook(request):
         # Invalid signature
         raise e
 
-    print('SUCCESS!!!!!!')
-    print(event)
+    # print event as a big string
+    print(json.dumps(event))
 
     return jsonify(success=True)
