@@ -19,5 +19,5 @@ resource "google_secret_manager_secret_iam_binding" "stripe_endpoint_secret" {
   project   = var.gcp_project_number
   secret_id = "projects/${var.gcp_project_number}/secrets/${google_secret_manager_secret.stripe_endpoint_secret.secret_id}"
   role      = each.key
-  members   = ["serviceAccount:${var.gcp_project_id}@appspot.gserviceaccount.com"]
+  members   = ["serviceAccount:${google_service_account.pyfunc_stripe_webhook.email}"]
 }
