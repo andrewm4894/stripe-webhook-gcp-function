@@ -2,6 +2,8 @@
 
 Minimal GCP python function to receive and print events from Stripe.
 
+Accompanying blog post: https://andrewm4894.com/2022/12/22/stripe-webhook-gcp-functions-framework-python/
+
 ## GCP Functions Framework
 
 ### Run function locally in debug mode
